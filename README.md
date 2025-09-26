@@ -1,5 +1,6 @@
 # AI DEV RESEARCH 
-**AIDev Dataset Challenge — RQ 5(a/b/c): Do Clarification-Seeking AI Agents Ship Better Code?**
+
+**AIDev Dataset Challenge: Studying AI Coding Agents on GitHub?**
 
 This repository contains code, notebooks, and report artifacts for analyzing the **AIDev** dataset to answer **Research Question 5** from *AI Teammates in SE 3.0*:
 
@@ -7,12 +8,11 @@ This repository contains code, notebooks, and report artifacts for analyzing the
 - **5(b)** Early textual signals predicting merge acceptance  
 - **5(c)** Security-related signals and outcomes
 
----
 
 ## 📦 Repository Layout
 
 ```
-AI DEV RESEARCH /
+AI DEV RESEARCH/
 ├─ notebooks/
 │  └─ AIDev_RQ5_Analysis.ipynb          # end-to-end analysis notebook
 ├─ results/                              # created at runtime (figures, tables, reports)
@@ -20,12 +20,11 @@ AI DEV RESEARCH /
 └─ requirements.txt
 ```
 
----
 
-## 🧰 Environment
+## 🛠️ Setup (requirements.txt at the repo root)
 
-- Python **3.10+** (tested on Colab 3.12)  
-- CPU is sufficient; no GPU required
+Place **`requirements.txt`** at the **root** of this repository (same level as `README.md`).  
+Install dependencies locally or in a virtual environment:
 
 ```bash
 python -m venv .venv
@@ -33,7 +32,13 @@ source .venv/bin/activate            # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
----
+**Colab (install directly from GitHub):**
+```python
+!pip install -r https://raw.githubusercontent.com/<USER>/<REPO>/<BRANCH>/requirements.txt
+```
+
+> Python **3.10+** recommended (tested on Colab 3.12).
+
 
 ## 📊 Data
 
@@ -43,7 +48,6 @@ pip install -r requirements.txt
 
 > If your environment requires auth for Hugging Face, run: `huggingface-cli login` (or set `HF_TOKEN`).
 
----
 
 ## 🚀 How to Run
 
@@ -60,9 +64,8 @@ pip install -r requirements.txt
    - **RQ 5(b):** descriptives, bootstrap (1,000), regularized logit (Δ probability, AUC)  
    - **RQ 5(c):** security prevalence/acceptance (+ optional time-to-merge), controlled logit  
    - Writer cell: exports tables/figures and DOCX/PDF under `results/`
-3. Generated artifacts appear in `results/` (e.g., `acceptance_by_clarify.csv`, `acceptance_by_language.png`, reports).
+3. Generated artifacts appear in `results/`.
 
----
 
 ## 🔍 Operationalization (high level)
 
@@ -72,7 +75,6 @@ pip install -r requirements.txt
 - **5(c) security:** `security_flag = sec_text OR sec_dep_bump OR sec_secret_terms`  
 - **Controls:** `log_stars`, `pr_size_log1p`, and one-hot `language`
 
----
 
 ## 🧪 Methods Summary
 
@@ -83,7 +85,6 @@ pip install -r requirements.txt
 
 > Results are **associational**, not causal; unobserved confounding may remain.
 
----
 
 ## 📚 Citation
 
@@ -92,7 +93,6 @@ Please cite the dataset and paper if you use this repository:
 - **Dataset:** `hao-li/AIDev` — https://huggingface.co/datasets/hao-li/AIDev  
 - **Preprint:** SAIL Research, *AI Teammates in SE3.0: How Autonomous Coding Agents Are Reshaping Software Engineering* (AIDev preprint).
 
----
 
 ## 📝 License
 
