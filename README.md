@@ -73,9 +73,6 @@ pip install -r requirements.txt
 
 ---
 
-## Timeline
-![Assessment Gantt](results/figures/assessment_gantt.png)
-
 ---
 
 ## Citation
